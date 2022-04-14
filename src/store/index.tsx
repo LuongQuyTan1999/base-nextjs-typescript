@@ -1,8 +1,8 @@
-import thunk from 'redux-thunk';
-import { configureStore } from '@reduxjs/toolkit';
+import thunk from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
 
 // Slice
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
 const store = configureStore({
   reducer: {},

@@ -1,0 +1,23 @@
+{
+  "Home": "Home",
+  "Orders": "Orders",
+  "Your order": "Your order",
+  "My account": "My account",
+  "Need help": "Need help",
+  "Connection": "Connection",
+  "Forgot your password?": "Forgot your password?",
+  "Sign in": "Sign in",
+  "Sign up": "Sign up",
+  "Don't have an account": "Don't have an account",
+  "E-mail": "E-mail",
+  "Password": "Password",
+  "Remember me": "Remember me",
+  "Field is required": "Field is required",
+  "Inscription": "Inscription",
+  "Choose your profile to start using the application": "Choose your profile to start using the application",
+  "Next": "Next",
+  "Already have an account": "Already have an account",
+  "Client": "Client",
+  "Infirmier": "Infirmier",
+  "Doctor": "Doctor"
+}
