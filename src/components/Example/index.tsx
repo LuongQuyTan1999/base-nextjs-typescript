@@ -1,3 +1,1 @@
-const Example = () => <div>Example</div>;
-
-export default Example;
+export const Example = () => <div>Example</div>;
