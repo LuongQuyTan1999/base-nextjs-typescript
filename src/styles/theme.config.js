@@ -7,7 +7,7 @@ export const lightTheme = {
   mainText: "#6A81BB",
   primaryText: "#0e2667",
   titleColor: "#1C253C",
-  projectColor: "linear-gradient(90deg, #00A3FF 0%, #0075FF 100%)",
+  projectColor: "#FF8B00",
   bgGray: "#F4F5F6",
   primary: "#D63384",
   bgPrimary: "linear-gradient(90deg, #DF7BEA 0%, #ED3197 100%)",
@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     background: ${({ theme }) => theme.mainColor};
     color: ${({ theme }) => theme.titleColor};
-    font-family: 'Inter', sans-serif !important;
+    /* font-family: 'SF Pro Text', sans-serif !important; */
     font-style: normal;
     font-weight: 400;
     font-style: normal;
@@ -36,16 +36,16 @@ export const GlobalStyles = createGlobalStyle`
   
   input, textarea, button {font-family: inherit;
       ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-            color: ${({ theme }) => theme.mainText};
+            color: #d4d4d4;
         opacity: 1; /* Firefox */
       }
 
       :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: ${({ theme }) => theme.mainText};
+            color: #d4d4d4;
       }
 
       ::-ms-input-placeholder { /* Microsoft Edge */
-            color: ${({ theme }) => theme.mainText};
+            color: #d4d4d4;
       }
   }
 
@@ -75,14 +75,15 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.mainColor};
   }
   a:hover {
-    color: ${({ theme }) => theme.primary} !important;
+    color: ${({ theme }) => theme.projectColor} !important;
   }
   a:active,a:focus{
     outline:none;
   } 
 
   a:hover svg path  {
-    stroke: ${({ theme }) => theme.primary};
+    stroke: ${({ theme }) => theme.projectColor};
+    fill: ${({ theme }) => theme.projectColor};
   }
 
 
@@ -95,37 +96,50 @@ export const GlobalStyles = createGlobalStyle`
   select:focus-visible, 
   select:active,
   select:focus {
-    -webkit-outline-color: ${({ theme }) => theme.primary};
-    outline-color: ${({ theme }) => theme.primary};
-    border: 1px solid ${({ theme }) => theme.primary} !important; 
+    -webkit-outline-color: ${({ theme }) => theme.projectColor};
+    outline-color: ${({ theme }) => theme.projectColor};
+  }
+
+  button[aria-label="Unzoom image"] {
+    cursor: zoom-out
   }
 
   table {
-    border-collapse: inherit;
     width: 100%;
-    border: 1px solid #eaeaea;
-    border-radius: 1rem;
-    margin-top: 3.2rem;
+    margin: 0rem !important;
 
     thead {
+      tr > th:first-child {
+        padding-left: 1.5rem !important;
+      }
+
       tr th {
-        font-weight: bold;
-        font-size: 1.6rem;
-        line-height: 2.4rem;
-        color: ${({ theme }) => theme.mainText};
-        padding: 2rem;
-        padding-bottom: 1.2rem;
-        border-bottom: 1px solid ${({ theme }) => theme.bgGray};
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        color: #A3A3A3;
+        padding: 1.3rem 0rem !important;
+        text-align: center;
+        border-bottom: none;
       }
     }
 
     tbody {
+      tbody, td, tfoot, th, thead, tr {
+        border:none !important;
+      }
+
+      tr > td:first-child {
+        padding-left: 1.5rem !important;
+      }
+
       tr td {
+        font-weight: 400;
         font-size: 1.6rem;
         line-height: 2.4rem;
-        padding: 2rem;
-        padding-bottom: 1.2rem;
-        border-bottom: 1px solid ${({ theme }) => theme.bgGray};
+        color: #171717;
+        padding: 1.3rem 0rem !important;
+        text-align: center;
       }
 
       tr td:last-child {
@@ -138,8 +152,47 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .table>:not(:first-child) {
+      border: none
+  }
+
+  .table-striped>tbody>tr:nth-of-type(odd)>* {
+    --bs-table-accent-bg: rgba(245, 245, 245, 0.5);
+    color: #171717;
+  }
+
   .modal-backdrop.show {
-    background-color: #434C61;
+    background-color: rgba(0, 0, 0, 0.6),
+  }
+
+  .modal-content {
+    background: #ffffff;
+    border-radius: 10px;
+
+    .modal-header {
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0px 0px;
+      border: none;
+      padding: 1.5rem 3rem;
+
+      .modal-title {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 3.6rem;
+        color: #171717;
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    .modal-body {
+      padding: 3rem;
+    }
+
+    .modal-footer {
+      border: none;
+      padding: 0rem 3rem 3rem 3rem;
+    }
   }
 
   .Toastify__toast .Toastify__toast-body {

@@ -1,13 +1,23 @@
+import Header from "./components/Header";
+import NavLeft from "./components/NavLeft";
+import * as S from "./styles";
+
 export type Props = {
   children?: React.ReactNode;
 };
 
-const DefaultLayout = ({ children }: Props) => {
+export const DefaultLayout = ({ children }: Props) => {
   return (
-    <>
-      <div>{children}</div>
-    </>
+    <S.DefaultLayout>
+      <S.NavLeft>
+        <NavLeft />
+      </S.NavLeft>
+
+      <S.Header>
+        <Header />
+      </S.Header>
+
+      <S.Main>{children}</S.Main>
+    </S.DefaultLayout>
   );
 };
-
-export default DefaultLayout;
